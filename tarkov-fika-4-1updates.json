@@ -65,7 +65,7 @@
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "powershell.exe",
-        "UpdateSourceArgs": "-NoProfile -Command \"$ProgressPreference='SilentlyContinue'; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Set-Location -Path 'tarkov/server'; $Releases = (Invoke-WebRequest -UseBasicParsing -Uri 'https://api.github.com/repos/sp-tushonka/build/releases').Content; $DownloadURL = [regex]::Match($Releases, 'https://mirror\\.sp-tushonka\\.com/releases/SPT-4\\.1\\.[A-Za-z0-9._-]+\\.7z').Value; Invoke-WebRequest -UseBasicParsing -Uri \\\"$DownloadURL\\\" -OutFile 'SPT.7z'; & ../7-Zip/7z.exe x -y -aoa SPT.7z | Out-Null; Remove-Item -Path 'SPT.7z' -Force -ErrorAction SilentlyContinue | Out-Null\"",
+        "UpdateSourceArgs": "-NoProfile -Command \"$ProgressPreference='SilentlyContinue'; [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Set-Location -Path 'tarkov/server'; $Releases = (Invoke-WebRequest -UseBasicParsing -Uri 'https://api.github.com/repos/sp-tushonka/build/releases').Content; $DownloadURL = [regex]::Match($Releases, 'https://github\\.com/SP-Tushonka/build/releases/download/4\\.1\\.[0-9]+/SPT-4\\.1\\.[A-Za-z0-9._-]+\\.7z').Value; Invoke-WebRequest -UseBasicParsing -Uri \\\"$DownloadURL\\\" -OutFile 'SPT.7z'; & ../7-Zip/7z.exe x -y -aoa SPT.7z | Out-Null; Remove-Item -Path 'SPT.7z' -Force -ErrorAction SilentlyContinue | Out-Null\"",
         "SkipOnFailure": false
     },
     {
